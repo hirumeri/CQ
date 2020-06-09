@@ -63,6 +63,16 @@ namespace CQ.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
+        internal static System.Drawing.Bitmap death {
+            get {
+                object obj = ResourceManager.GetObject("death", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
         internal static System.Drawing.Bitmap idle {
             get {
                 object obj = ResourceManager.GetObject("idle", resourceCulture);
@@ -76,6 +86,16 @@ namespace CQ.Properties {
         internal static System.Drawing.Bitmap Run {
             get {
                 object obj = ResourceManager.GetObject("Run", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static System.Drawing.Bitmap zattack {
+            get {
+                object obj = ResourceManager.GetObject("zattack", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
