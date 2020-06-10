@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices.ComTypes;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -44,12 +45,13 @@ namespace CQ
                 button1.Enabled = false;
                 button2.Enabled = false;
                 label3.Text = "The enemy attacks you.";
-                //Thread.Sleep(3000);
-                enemy.Kick(hero.hp_he);
+                // Thread.Sleep(3000);
+                hero.hp_he = enemy.Kick(hero.hp_he);
                 label2.Text = hero.hp_he.ToString();
-                label3.Text = "Choose your action.";
+                label3.Text = "Choose your action."; 
                 button1.Enabled = true;
                 button2.Enabled = true;
+                turn++;
             }
             else
             { 
@@ -61,8 +63,9 @@ namespace CQ
                 label3.Text = "You have won!";
             }
         }
-        private void button2_Click(object sender, EventArgs e)
+        private  void button2_Click(object sender, EventArgs e)
         {
+            
             if (hero.hp_he > 13)
             {
                 hero.hp_he -= 12;
@@ -76,12 +79,12 @@ namespace CQ
                 {
                     label1.Text = enemy.hp_en.ToString();
                     label3.Text = "The enemy attacks you.";
-                    //Thread.Sleep(3000);
-                    enemy.Kick(hero.hp_he);
+                    hero.hp_he = enemy.Kick(hero.hp_he);
                     label2.Text = hero.hp_he.ToString();
                     label3.Text = "Choose your action.";
                     button1.Enabled = true;
                     button2.Enabled = true;
+                    turn++;
                 }
                 else
                 {
@@ -107,6 +110,7 @@ namespace CQ
                 label3.Text = "Choose your action.";
                 button1.Enabled = true;
                 button2.Enabled = true;
+                turn++;
             }
             if(enemy.hp_en < 0)
             {
@@ -137,11 +141,11 @@ namespace CQ
 
     public class Enemy
     {
-        public int hp_en = 224;
+        public int hp_en = 168;
 
         public int Kick(int y)
         {
-            return y - 16;
+            return y - 8;
         }
     }
 }
