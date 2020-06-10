@@ -1,0 +1,2 @@
+# CQ
+learning C#
